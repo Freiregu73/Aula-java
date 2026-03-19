@@ -122,15 +122,48 @@ public class Aula_11_03 {
         
         //EX3
         
-        int idade;
-        
-        System.out.println("****Verificar categoria****");
-        System.out.println("Qual a idade do aluno?");
-        idade = grava.nextInt();
+//        int idade;
+//        
+//        System.out.println("****Verificar categoria****");
+//        System.out.println("Qual a idade do aluno?");
+//        idade = grava.nextInt();
+//
+//        if(idade <= 0){
+//                System.out.println("Idade invalida!");
+//        }else if(idade <=10){
+//            System.out.println("Categoria infantil");
+//        }else if(idade <=13){
+//            System.out.println("Categoria infanto-juvenil");
+//        }else if(idade <=17){
+//            System.out.println("Categoria pré-adolescete");
+//        }else{
+//            System.out.println("Categoria adulto");
+//        }
+//        
 
-        if(idade <= 0)
-                
-        }
+    //EX5
+    int idade;
+    int tempo_trabalho;
+    int negativado;
+    double renda;
+    
+    System.out.println("Qual a sua idade?");
+        idade = grava.nextInt();
+        
+    System.out.println("Qual a sua renda");
+        renda = grava.nextInt();
+        
+    System.out.println("Qual seu tempo de trabalho?");
+        tempo_trabalho = grava.nextInt();
+        
+    System.out.println("Você está negativado? \n1-sim \n2-não");
+        negativado = grava.nextInt();
+        
+    if(idade < 21 || idade >65 || renda <2500 || negativado == 1){
+        System.out.println("Credito não aprovado!");
+    }else if(renda >=2500 && renda <= 5000 && tempo_trabalho)
+        
+        
         
     }
     
