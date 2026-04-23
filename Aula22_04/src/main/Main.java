@@ -43,7 +43,8 @@ public class Main {
          //EXERCICIOS
          
          //Exercicios.exerc();
-         Exercicios.exerc2();
+         //Exercicios.exerc2();
+         Exercicios.exerc3();
          
     }
     
