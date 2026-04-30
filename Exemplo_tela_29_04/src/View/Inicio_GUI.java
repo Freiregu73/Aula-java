@@ -70,6 +70,11 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jLabel3.setBounds(110, 20, 200, 24);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/programador.gif"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel4);
         jLabel4.setBounds(120, 140, 170, 130);
 
@@ -102,16 +107,12 @@ public class Inicio_GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void SAIR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAIR_BTNActionPerformed
-        String x = JOptionPane.showInputDialog(null, "Deseja realmente sair? \n 1-SIM \n 2-NÃO");
-        int op = Integer.parseInt(x);
-        if(op == 1){
-            System.exit(0);
-        }else if(op == 2){
-            JOptionPane.showMessageDialog(null,"Voltando ao sistema...");
-        }else{
-            JOptionPane.showMessageDialog(null,"Opção invalida!");
-        }
+        Model.Funcoes_DAO.fechar();
     }//GEN-LAST:event_SAIR_BTNActionPerformed
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
