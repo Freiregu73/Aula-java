@@ -18,6 +18,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
      */
     public Inicio_GUI() {
         initComponents();
+        RESULTADO_TXT.setVisible(false);
     }
 
     /**
@@ -41,6 +42,8 @@ public class Inicio_GUI extends javax.swing.JFrame {
         MULTIPLICACAO_BTN3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         SAIR_BTN1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        RESULTADO_TXT = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -64,9 +67,9 @@ public class Inicio_GUI extends javax.swing.JFrame {
         VALOR2_TXT.setBounds(150, 140, 90, 20);
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
-        jLabel2.setText("VALOR 2");
+        jLabel2.setText("RESULTADO");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(150, 120, 59, 15);
+        jLabel2.setBounds(150, 170, 70, 15);
 
         DIVISAO_BTN.setBackground(new java.awt.Color(255, 255, 204));
         DIVISAO_BTN.setText("/");
@@ -76,7 +79,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel1.add(DIVISAO_BTN);
-        DIVISAO_BTN.setBounds(280, 210, 50, 23);
+        DIVISAO_BTN.setBounds(280, 240, 50, 23);
 
         LIMPAR_BTN.setBackground(new java.awt.Color(255, 88, 59));
         LIMPAR_BTN.setText("LIMPAR");
@@ -96,7 +99,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel1.add(SOMA_BTN1);
-        SOMA_BTN1.setBounds(100, 210, 50, 23);
+        SOMA_BTN1.setBounds(100, 240, 50, 23);
 
         SUBTRACAO_BTN2.setBackground(new java.awt.Color(255, 255, 204));
         SUBTRACAO_BTN2.setText("-");
@@ -106,7 +109,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel1.add(SUBTRACAO_BTN2);
-        SUBTRACAO_BTN2.setBounds(160, 210, 50, 23);
+        SUBTRACAO_BTN2.setBounds(160, 240, 50, 23);
 
         MULTIPLICACAO_BTN3.setBackground(new java.awt.Color(255, 255, 204));
         MULTIPLICACAO_BTN3.setText("X");
@@ -116,7 +119,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel1.add(MULTIPLICACAO_BTN3);
-        MULTIPLICACAO_BTN3.setBounds(220, 210, 50, 23);
+        MULTIPLICACAO_BTN3.setBounds(220, 240, 50, 23);
 
         jLabel3.setFont(new java.awt.Font("MingLiU_HKSCS-ExtB", 0, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -133,6 +136,13 @@ public class Inicio_GUI extends javax.swing.JFrame {
         });
         jPanel1.add(SAIR_BTN1);
         SAIR_BTN1.setBounds(300, 20, 80, 23);
+
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
+        jLabel4.setText("VALOR 2");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(150, 120, 59, 15);
+        jPanel1.add(RESULTADO_TXT);
+        RESULTADO_TXT.setBounds(150, 190, 90, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -216,6 +226,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private javax.swing.JButton DIVISAO_BTN;
     private javax.swing.JButton LIMPAR_BTN;
     private javax.swing.JButton MULTIPLICACAO_BTN3;
+    public static javax.swing.JTextField RESULTADO_TXT;
     private javax.swing.JButton SAIR_BTN1;
     private javax.swing.JButton SOMA_BTN1;
     private javax.swing.JButton SUBTRACAO_BTN2;
@@ -224,6 +235,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
