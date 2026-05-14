@@ -35,6 +35,13 @@ public class Funcoes_DAO {
         EXIBIR2_TXT.setText( "Você está com: " + classificacao);
     }
     
+    public static void limpar(){
+        EXIBIR_TXT.setText("");
+        EXIBIR2_TXT.setText("");
+        ALTURA_TXT.setText("");
+        PESO_TXT.setText("");
+    }
+    
     public static void sair(){
         System.exit(0);
     }

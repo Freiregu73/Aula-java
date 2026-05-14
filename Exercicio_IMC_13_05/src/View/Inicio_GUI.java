@@ -37,6 +37,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
         EXIBIR2_TXT = new javax.swing.JLabel();
         SAIR_BTN = new javax.swing.JButton();
         EXIBIR_TXT = new javax.swing.JLabel();
+        LIMPAR_BTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -58,7 +59,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel1.add(IMC_BTN);
-        IMC_BTN.setBounds(120, 280, 110, 30);
+        IMC_BTN.setBounds(60, 280, 110, 30);
         jPanel1.add(PESO_TXT);
         PESO_TXT.setBounds(100, 90, 160, 20);
 
@@ -98,6 +99,16 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jPanel1.add(EXIBIR_TXT);
         EXIBIR_TXT.setBounds(50, 170, 210, 30);
 
+        LIMPAR_BTN.setBackground(new java.awt.Color(255, 153, 0));
+        LIMPAR_BTN.setText("LIMPAR");
+        LIMPAR_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LIMPAR_BTNActionPerformed(evt);
+            }
+        });
+        jPanel1.add(LIMPAR_BTN);
+        LIMPAR_BTN.setBounds(200, 280, 110, 30);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -124,6 +135,10 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private void SAIR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAIR_BTNActionPerformed
         Model.Funcoes_DAO.sair();
     }//GEN-LAST:event_SAIR_BTNActionPerformed
+
+    private void LIMPAR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LIMPAR_BTNActionPerformed
+        Model.Funcoes_DAO.limpar();
+    }//GEN-LAST:event_LIMPAR_BTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,6 +180,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     public static javax.swing.JLabel EXIBIR2_TXT;
     public static javax.swing.JLabel EXIBIR_TXT;
     private javax.swing.JButton IMC_BTN;
+    private javax.swing.JButton LIMPAR_BTN;
     public static javax.swing.JTextField PESO_TXT;
     private javax.swing.JButton SAIR_BTN;
     private javax.swing.JLabel jLabel1;
