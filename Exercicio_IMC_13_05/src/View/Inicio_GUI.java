@@ -38,6 +38,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
         SAIR_BTN = new javax.swing.JButton();
         EXIBIR_TXT = new javax.swing.JLabel();
         LIMPAR_BTN = new javax.swing.JButton();
+        IMC_IMG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -46,10 +47,10 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(0));
         jPanel1.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel1.setText("CALCULADORA DE IMC");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(160, 20, 250, 26);
+        jLabel1.setBounds(160, 20, 320, 35);
 
         IMC_BTN.setBackground(new java.awt.Color(204, 0, 102));
         IMC_BTN.setText("CALCULAR");
@@ -61,7 +62,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jPanel1.add(IMC_BTN);
         IMC_BTN.setBounds(60, 280, 110, 30);
         jPanel1.add(PESO_TXT);
-        PESO_TXT.setBounds(100, 90, 160, 20);
+        PESO_TXT.setBounds(100, 90, 210, 20);
 
         ALTURA_TXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,7 +70,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ALTURA_TXT);
-        ALTURA_TXT.setBounds(100, 130, 160, 20);
+        ALTURA_TXT.setBounds(100, 130, 210, 20);
 
         jLabel2.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
         jLabel2.setText("Peso:");
@@ -108,6 +109,8 @@ public class Inicio_GUI extends javax.swing.JFrame {
         });
         jPanel1.add(LIMPAR_BTN);
         LIMPAR_BTN.setBounds(200, 280, 110, 30);
+        jPanel1.add(IMC_IMG);
+        IMC_IMG.setBounds(380, 70, 120, 220);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -180,6 +183,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     public static javax.swing.JLabel EXIBIR2_TXT;
     public static javax.swing.JLabel EXIBIR_TXT;
     private javax.swing.JButton IMC_BTN;
+    public static javax.swing.JLabel IMC_IMG;
     private javax.swing.JButton LIMPAR_BTN;
     public static javax.swing.JTextField PESO_TXT;
     private javax.swing.JButton SAIR_BTN;

@@ -6,6 +6,7 @@
 package Model;
 
 import static View.Inicio_GUI.*;
+import javax.swing.ImageIcon;
 
 public class Funcoes_DAO {
     public static double peso = 0, altura = 0, imc = 0;
@@ -17,7 +18,7 @@ public class Funcoes_DAO {
         imc = peso / (altura*altura);
         
         if (imc < 19 ) {
-		classificacao = "Abaixo do peso!";
+		classificacao = "Abaixo do peso!"; 
 	} else if(imc < 25){
 		classificacao = "Peso ideal";
 	}else if(imc < 30){
