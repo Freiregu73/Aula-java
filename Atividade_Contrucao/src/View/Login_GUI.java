@@ -5,26 +5,23 @@
  */
 package View;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Laboratorio-Info
  */
-public class Splash_GUI extends javax.swing.JFrame {
+public class Login_GUI extends javax.swing.JFrame {
 
     /**
-     * Creates new form Splash_GUI
+     * Creates new form Login_GUI
      */
-    public Splash_GUI() {
+    public Login_GUI() {
         initComponents();
-        Controller.Splash_DAO.carrega();
+        Controller.Verifica_DAO.Verifica();
     }
     
-    
+     
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,40 +33,52 @@ public class Splash_GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        barra = new javax.swing.JProgressBar();
-        men_txt = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        login_txt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        senha_txt = new javax.swing.JPasswordField();
+        jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(255, 102, 102));
         jPanel1.setLayout(null);
 
-        barra.setBackground(new java.awt.Color(255, 153, 153));
-        barra.setForeground(new java.awt.Color(255, 204, 204));
-        jPanel1.add(barra);
-        barra.setBounds(58, 192, 377, 24);
-        jPanel1.add(men_txt);
-        men_txt.setBounds(70, 230, 340, 30);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/contrurores.png"))); // NOI18N
+        jLabel1.setText("LOGIN");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(190, 20, 128, 120);
+        jLabel1.setBounds(220, 170, 56, 24);
+        jPanel1.add(login_txt);
+        login_txt.setBounds(140, 200, 200, 20);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Calculadora de custos");
-        jLabel2.setAlignmentX(0.5F);
+        jLabel2.setText("SENHA");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(140, 150, 220, 30);
+        jLabel2.setBounds(220, 230, 56, 24);
+        jPanel1.add(senha_txt);
+        senha_txt.setBounds(140, 260, 200, 20);
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 500, 320);
+        jButton1.setBackground(new java.awt.Color(255, 153, 153));
+        jButton1.setText("ACESSAR");
+        jPanel1.add(jButton1);
+        jButton1.setBounds(373, 293, 100, 40);
 
-        setSize(new java.awt.Dimension(500, 400));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/contrurores.png"))); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(180, 30, 130, 130);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        setSize(new java.awt.Dimension(484, 361));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -90,29 +99,31 @@ public class Splash_GUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Splash_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Splash_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Splash_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Splash_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Splash_GUI().setVisible(true);
+                new Login_GUI().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JProgressBar barra;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    public static javax.swing.JLabel men_txt;
+    public static javax.swing.JTextField login_txt;
+    public static javax.swing.JPasswordField senha_txt;
     // End of variables declaration//GEN-END:variables
 }
