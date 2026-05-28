@@ -5,6 +5,8 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Laboratorio-Info
@@ -17,6 +19,8 @@ public class Login_GUI extends javax.swing.JFrame {
     public Login_GUI() {
         initComponents();
     }
+    
+    public static int cont = 0;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,10 +33,10 @@ public class Login_GUI extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        login_txt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        ACESSAR_BTN = new javax.swing.JButton();
+        senha_txt = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -43,29 +47,28 @@ public class Login_GUI extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(190, 90, 40, 24);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        login_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                login_txtActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(90, 120, 240, 20);
+        jPanel1.add(login_txt);
+        login_txt.setBounds(90, 120, 240, 20);
 
         jLabel2.setText("SENHA");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(190, 150, 40, 24);
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        ACESSAR_BTN.setText("ACESSAR");
+        ACESSAR_BTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                ACESSAR_BTNActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(90, 180, 240, 20);
-
-        jButton1.setText("ACESSAR");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(293, 243, 90, 30);
+        jPanel1.add(ACESSAR_BTN);
+        ACESSAR_BTN.setBounds(293, 243, 90, 30);
+        jPanel1.add(senha_txt);
+        senha_txt.setBounds(91, 190, 240, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,13 +85,13 @@ public class Login_GUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void login_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_login_txtActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    private void ACESSAR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACESSAR_BTNActionPerformed
+        Controller.Verifica_DAO.Verifica();
+    }//GEN-LAST:event_ACESSAR_BTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,11 +129,11 @@ public class Login_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton ACESSAR_BTN;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    public static javax.swing.JTextField login_txt;
+    public static javax.swing.JPasswordField senha_txt;
     // End of variables declaration//GEN-END:variables
 }
