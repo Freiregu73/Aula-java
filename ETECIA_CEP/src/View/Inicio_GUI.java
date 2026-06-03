@@ -177,6 +177,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
         bairro_txt.setText("");
         cidade_txt.setText("");
         estado_txt.setText("");
+        cep_txt.setText("");
     }//GEN-LAST:event_LIMPAR_BTNActionPerformed
 
     /**
