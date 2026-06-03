@@ -5,6 +5,8 @@
  */
 package View;
 
+import static Model.Pesquisa_DAO.buscarCep;
+
 /**
  *
  * @author Laboratorio-Info
@@ -16,6 +18,8 @@ public class Inicio_GUI extends javax.swing.JFrame {
      */
     public Inicio_GUI() {
         initComponents();
+        ok_img.setVisible(false);
+        erro_img.setVisible(false);
     }
 
     /**
@@ -41,6 +45,10 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         estado_txt = new javax.swing.JTextField();
         SAIR_BTN = new javax.swing.JButton();
+        msg_txt = new javax.swing.JLabel();
+        LIMPAR_BTN = new javax.swing.JButton();
+        erro_img = new javax.swing.JLabel();
+        ok_img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -78,10 +86,15 @@ public class Inicio_GUI extends javax.swing.JFrame {
 
         PESQUISAR_BTN.setText("Pesquisar");
         PESQUISAR_BTN.setToolTipText("Clique para pesquisar");
+        PESQUISAR_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PESQUISAR_BTNActionPerformed(evt);
+            }
+        });
         jPanel1.add(PESQUISAR_BTN);
-        PESQUISAR_BTN.setBounds(250, 40, 100, 30);
+        PESQUISAR_BTN.setBounds(250, 40, 130, 30);
         jPanel1.add(rua_txt);
-        rua_txt.setBounds(20, 120, 330, 20);
+        rua_txt.setBounds(20, 120, 210, 20);
 
         jLabel2.setText("Rua:");
         jPanel1.add(jLabel2);
@@ -91,19 +104,19 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(20, 180, 50, 20);
         jPanel1.add(bairro_txt);
-        bairro_txt.setBounds(20, 160, 330, 20);
+        bairro_txt.setBounds(20, 160, 210, 20);
 
         jLabel4.setText("Bairro:");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(20, 140, 60, 20);
         jPanel1.add(cidade_txt);
-        cidade_txt.setBounds(20, 200, 330, 20);
+        cidade_txt.setBounds(20, 200, 210, 20);
 
         jLabel5.setText("Estado:");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(20, 220, 60, 20);
         jPanel1.add(estado_txt);
-        estado_txt.setBounds(20, 240, 200, 20);
+        estado_txt.setBounds(20, 240, 150, 20);
 
         SAIR_BTN.setText("SAIR");
         SAIR_BTN.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +125,26 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel1.add(SAIR_BTN);
-        SAIR_BTN.setBounds(270, 240, 90, 30);
+        SAIR_BTN.setBounds(290, 240, 90, 30);
+        jPanel1.add(msg_txt);
+        msg_txt.setBounds(240, 90, 150, 30);
+
+        LIMPAR_BTN.setText("Limpar");
+        LIMPAR_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LIMPAR_BTNActionPerformed(evt);
+            }
+        });
+        jPanel1.add(LIMPAR_BTN);
+        LIMPAR_BTN.setBounds(180, 240, 100, 30);
+
+        erro_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/no.png"))); // NOI18N
+        jPanel1.add(erro_img);
+        erro_img.setBounds(280, 140, 60, 60);
+
+        ok_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/ok.png"))); // NOI18N
+        jPanel1.add(ok_img);
+        ok_img.setBounds(280, 140, 60, 60);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,6 +164,20 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private void SAIR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAIR_BTNActionPerformed
         System.exit(0);
     }//GEN-LAST:event_SAIR_BTNActionPerformed
+
+    private void PESQUISAR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PESQUISAR_BTNActionPerformed
+        buscarCep(cep_txt.getText());
+    }//GEN-LAST:event_PESQUISAR_BTNActionPerformed
+
+    private void LIMPAR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LIMPAR_BTNActionPerformed
+        ok_img.setVisible(false);
+        erro_img.setVisible(false);
+        msg_txt.setText("");
+        rua_txt.setText("");
+        bairro_txt.setText("");
+        cidade_txt.setText("");
+        estado_txt.setText("");
+    }//GEN-LAST:event_LIMPAR_BTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,11 +215,13 @@ public class Inicio_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton LIMPAR_BTN;
     private javax.swing.JButton PESQUISAR_BTN;
     private javax.swing.JButton SAIR_BTN;
     public static javax.swing.JTextField bairro_txt;
     public static javax.swing.JTextField cep_txt;
     public static javax.swing.JTextField cidade_txt;
+    public static javax.swing.JLabel erro_img;
     public static javax.swing.JTextField estado_txt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -182,6 +230,8 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    public static javax.swing.JLabel msg_txt;
+    public static javax.swing.JLabel ok_img;
     public static javax.swing.JTextField rua_txt;
     // End of variables declaration//GEN-END:variables
 }
