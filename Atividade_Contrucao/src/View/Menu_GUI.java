@@ -79,9 +79,9 @@ public class Menu_GUI extends javax.swing.JFrame {
         jPanel1.add(CALCULAR_BTN);
         CALCULAR_BTN.setBounds(293, 223, 80, 30);
         jPanel1.add(blocos_txt);
-        blocos_txt.setBounds(130, 190, 150, 20);
+        blocos_txt.setBounds(90, 190, 260, 20);
         jPanel1.add(area_txt);
-        area_txt.setBounds(130, 160, 150, 20);
+        area_txt.setBounds(90, 160, 260, 20);
 
         jMenu4.setText("Sair");
 

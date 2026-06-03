@@ -37,7 +37,7 @@ public class Login_GUI extends javax.swing.JFrame {
         login_txt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         senha_txt = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        entrarBTN = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,10 +58,15 @@ public class Login_GUI extends javax.swing.JFrame {
         jPanel1.add(senha_txt);
         senha_txt.setBounds(140, 260, 200, 20);
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 153));
-        jButton1.setText("ACESSAR");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(373, 293, 100, 40);
+        entrarBTN.setBackground(new java.awt.Color(255, 153, 153));
+        entrarBTN.setText("ACESSAR");
+        entrarBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entrarBTNActionPerformed(evt);
+            }
+        });
+        jPanel1.add(entrarBTN);
+        entrarBTN.setBounds(373, 293, 100, 40);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/contrurores.png"))); // NOI18N
         jPanel1.add(jLabel3);
@@ -81,6 +86,10 @@ public class Login_GUI extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(484, 361));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void entrarBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarBTNActionPerformed
+        Controller.Verifica_DAO.Verifica();
+    }//GEN-LAST:event_entrarBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,7 +127,7 @@ public class Login_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton entrarBTN;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

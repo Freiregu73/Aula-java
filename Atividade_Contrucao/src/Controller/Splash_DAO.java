@@ -33,7 +33,7 @@ public class Splash_DAO {
                     if (barra.getValue() == 10) {
                         men_txt.setText("Fazendo a conexao com o banco de dados");
                         // driver_conexao.carregardriver();
-                        sleep(2000);
+                        sleep(100);
 
                     } else if (barra.getValue() <= 30) {
                         men_txt.setText("Carregando o sistema");
@@ -44,7 +44,7 @@ public class Splash_DAO {
 
                     } else {
                         men_txt.setText("Carregamento completo. Seu programa sera iniciado.");
-                        sleep(3000);
+                        sleep(100);
 
                         // Executa abertura do Login_GUI na EDT
                         SwingUtilities.invokeLater(() -> {
