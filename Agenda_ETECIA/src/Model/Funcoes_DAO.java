@@ -161,121 +161,118 @@ public class Funcoes_DAO {
 
         //--> fim
     }
-    
-    public static void alterar(){
+
+    public static void alterar() {
         //-->inicio
-        
+
         nom = nome1_txt.getText(); // recebendo o nome 
 
-      	end = end1_txt.getText(); // recebendo o endereço          
+        end = end1_txt.getText(); // recebendo o endereço          
 
-      	tel = Long.valueOf(tel1_txt.getText());// recebendo o telefone 
+        tel = Long.valueOf(tel1_txt.getText());// recebendo o telefone 
 
- 
+        Controller.ConectaDB_DB.carregaDriver();
 
-       Controller.ConectaDB_DB.carregaDriver(); 
+        try {
 
-        
+            Connection con = null;
 
-      try {      
+            try {
 
-            Connection con = null; 
+                con = (Connection) DriverManager.getConnection(url, username, password);
 
-      try { 
+            } catch (SQLException ex) {
 
-            con = (Connection) DriverManager.getConnection(url, username, password); 
+                Logger.getLogger(Inicio_GUI.class.getName()).log(Level.SEVERE, null, ex);
 
-      }catch (SQLException ex) { 
+            }
 
-            Logger.getLogger(Inicio_GUI.class.getName()).log(Level.SEVERE, null, ex); 
+            String sql = "UPDATE cliente SET cli_nome='" + nom + "',cli_end='" + end + "',cli_tel='" + tel + "' WHERE cli_cod=" + cod1_txt.getText();
 
-      } 
+            try {
 
-            String sql = "UPDATE cliente SET cli_nome='"+nom+"',cli_end='"+end+"',cli_tel='"+tel+"' WHERE cli_cod="+cod1_txt.getText();
-
-
-            try {  
-
-                PreparedStatement inserir = (PreparedStatement) con.prepareStatement(sql); 
+                PreparedStatement inserir = (PreparedStatement) con.prepareStatement(sql);
 
                 inserir.execute(); // Executando a inserção 
 
-                JOptionPane.showMessageDialog(null,"\nInserção realizada com sucesso!!!\n","",-1); 
+                JOptionPane.showMessageDialog(null, "\nInserção realizada com sucesso!!!\n", "", -1);
 
-                nome1_txt.setText(""); 
+                nome1_txt.setText("");
 
-                end1_txt.setText(""); 
+                end1_txt.setText("");
 
-                tel1_txt.setText(""); 
+                tel1_txt.setText("");
 
-		cod1_txt.setText("");
+                cod1_txt.setText("");
 
-            } catch (Exception ex) { 
+            } catch (Exception ex) {
 
-                JOptionPane.showMessageDialog(null,"\nErro na inserção!","ERRO!",0); 
+                JOptionPane.showMessageDialog(null, "\nErro na inserção!", "ERRO!", 0);
 
-            } 
+            }
 
- 
-
-        }catch(NumberFormatException erro){ 
+        } catch (NumberFormatException erro) {
 
             // Tratamento de erro caso o usuario não digite o telefone corretamente 
+            JOptionPane.showMessageDialog(null, "Digite os dados corretamente", "ERRO", 0);
 
-            JOptionPane.showMessageDialog(null,"Digite os dados corretamente","ERRO",0); 
+            tel1_txt.setText("");
 
-            tel1_txt.setText(""); 
+        }
 
-        }     
-        
         //-->fim
     }
-    
-    public static void excluir(){
+
+    public static void excluir() {
         //--> inicio
 
-            Controller.ConectaDB_DB.carregaDriver();
+        Controller.ConectaDB_DB.carregaDriver();
 
         int codigo = Integer.valueOf(cod2_txt.getText()); // Recebendo o código
-
-                
 
         try {// Tratamento de erro para a conexao
             // Declarando  a variavel de conexão con
             // e estabelendo a conexão
             Connection con = null;
 
-                try {
-                    con = (Connection) DriverManager.getConnection(url, username, password);
-                } catch (SQLException ex) {
-                    Logger.getLogger(Inicio_GUI.class.getName()).log(Level.SEVERE, null, ex);
-                }
-           
+            try {
+                con = (Connection) DriverManager.getConnection(url, username, password);
+            } catch (SQLException ex) {
+                Logger.getLogger(Inicio_GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             // Criando String com comando SQL para exclusão
-            String sql = "DELETE FROM cliente WHERE cli_cod ="+ codigo;
+            String sql = "DELETE FROM cliente WHERE cli_cod =" + codigo;
 
             try // Tratamento de erros para exclusão
             {// Criando Variavel para executar a ação
                 PreparedStatement excluir = (PreparedStatement) con.prepareStatement(sql);
                 excluir.execute();// Executando a exclusão
 
-                JOptionPane.showMessageDialog(null,"\nExclusão realizada com sucesso!!!\n","",-1);
+                JOptionPane.showMessageDialog(null, "\nExclusão realizada com sucesso!!!\n", "", -1);
                 cod2_txt.setText("");
 
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null,"\nErro na exclusão!","ERRO!",0);
+                JOptionPane.showMessageDialog(null, "\nErro na exclusão!", "ERRO!", 0);
             }
 
-        } catch(NumberFormatException erro){ // Codigo digitado com caracteres não numericos
-            JOptionPane.showMessageDialog(null,"Digite o código corretamante","ERRO",0);
+        } catch (NumberFormatException erro) { // Codigo digitado com caracteres não numericos
+            JOptionPane.showMessageDialog(null, "Digite o código corretamante", "ERRO", 0);
             cod2_txt.setText("");
 
         }
 
-        
         //-->fim
     }
-    
-    
+
+    public static void backup() {
+        String chamandoexe = "C:\\Users\\Laboratorio-Info\\Documents\\executa.bat";
+
+        try {
+            Runtime.getRuntime().exec(chamandoexe);
+        } catch (Exception e) {
+           System.out.println(e.getMessage());
+        }
+    }
+
 }

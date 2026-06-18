@@ -112,6 +112,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
         end1_txt = new javax.swing.JTextField();
         ALTERAR_BTN = new javax.swing.JButton();
         CONSULTAR_BTN = new javax.swing.JButton();
+        BACKUP_BTN = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         cod2_txt = new javax.swing.JTextField();
@@ -250,6 +251,15 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jPanel3.add(CONSULTAR_BTN);
         CONSULTAR_BTN.setBounds(190, 100, 90, 30);
 
+        BACKUP_BTN.setText("Backup");
+        BACKUP_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BACKUP_BTNActionPerformed(evt);
+            }
+        });
+        jPanel3.add(BACKUP_BTN);
+        BACKUP_BTN.setBounds(280, 230, 90, 30);
+
         jTabbedPane1.addTab("Consultar/Alterar", jPanel3);
 
         jPanel4.setLayout(null);
@@ -340,6 +350,10 @@ public class Inicio_GUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_EXCLUIR_BTNActionPerformed
 
+    private void BACKUP_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BACKUP_BTNActionPerformed
+     Model.Funcoes_DAO.backup();
+    }//GEN-LAST:event_BACKUP_BTNActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -377,6 +391,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ALTERAR_BTN;
+    private javax.swing.JButton BACKUP_BTN;
     private javax.swing.JButton CONSULTAR_BTN;
     private javax.swing.JTable Cliente;
     private javax.swing.JButton EXCLUIR_BTN;
